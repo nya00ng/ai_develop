@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>명언 생성 웹</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="quote-card" aria-labelledby="pageTitle">
+      <h1 id="pageTitle">명언 생성 웹 페이지</h1>
+      <div class="theme-row" role="group" aria-label="테마 선택">
+        <button id="lightThemeBtn" class="btn btn-theme" type="button" aria-pressed="false">라이트</button>
+        <button id="darkThemeBtn" class="btn btn-theme" type="button" aria-pressed="false">다크</button>
+      </div>
+
+      <div id="quoteStage" class="quote-stage">
+        <blockquote id="quoteText" class="quote-text">잠시 후 명언이 표시됩니다.</blockquote>
+        <p id="quoteAuthor" class="quote-author">- 시스템 -</p>
+      </div>
+
+      <div class="button-row">
+        <button id="nextBtn" class="btn btn-primary" type="button">다음 명언</button>
+        <button id="copyBtn" class="btn btn-neutral" type="button">복사하기</button>
+        <button id="favoriteBtn" class="btn btn-favorite" type="button" aria-pressed="false">즐겨찾기</button>
+      </div>
+
+      <form id="addQuoteForm" class="add-quote-form" novalidate>
+        <h2>명언 추가</h2>
+        <label for="myQuoteText">명언</label>
+        <textarea id="myQuoteText" name="myQuoteText" rows="3" placeholder="직접 만든 명언을 입력하세요." required></textarea>
+        <label for="myQuoteAuthor">저자</label>
+        <input id="myQuoteAuthor" name="myQuoteAuthor" type="text" placeholder="저자 이름" required>
+        <button class="btn btn-primary" type="submit">명언 추가</button>
+      </form>
+
+      <p id="favoriteInfo" class="favorite-info">즐겨찾기 0개</p>
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
